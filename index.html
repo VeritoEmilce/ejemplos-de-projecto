@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Titulo de la pagina</title>
+        <script src="/gauge.min.js"></script> 
+        
+    </head>
+    <body>
+        <!-- <input class="btn" type="button"> -->
+        <!-- <input type="button" value="Click me" onclick="clic()"/> -->
+        <!-- <input id="tempBox" type="number" readonly> -->
+        <div  class="contendor_agujas">
+            <canvas id="aguja1"
+                    data-type="radial-gauge"
+                    data-width="400"
+                    data-height="400"
+                    data-units="Temperatura"
+                    data-title="false"
+                    data-value="33.77"
+                    data-animate-on-init="true"
+                    data-animated-value="true"
+                    data-min-value="0"
+                    data-max-value="100"
+                    data-major-ticks="0,20,40,60,80,100"
+                    data-minor-ticks="2"
+                    data-stroke-ticks="false"
+                    data-highlights='[
+                        { "from": 0, "to": 20, "color": "LawnGreen" },
+                        { "from": 20, "to": 40, "color": "rgba(255,255,0,.15)" },
+                        { "from": 40, "to": 60, "color": "rgba(255,30,0,.25)" },
+                        { "from": 60, "to": 80, "color": "rgba(255,0,225,.25)" },
+                        { "from": 80, "to": 100, "color": "rgba(0,0,255,.25)" }
+                    ]'
+                    data-color-plate="transparent"
+                    data-color-major-ticks="#f5f5f5"
+                    data-color-minor-ticks="#ddd"
+                    data-color-title="#fff"
+                    data-color-units="#ccc"
+                    data-color-numbers="#eee"
+                    data-color-needle-start="rgba(240, 128, 128, 1)"
+                    data-color-needle-end="rgba(255, 160, 122, .9)"
+                    data-value-box="true"
+                    data-animation-rule="bounce"
+                    data-animation-duration="500"
+                    data-border-outer-width="3"
+                    data-border-middle-width="3"
+                    data-border-inner-width="3"></canvas>
+                
+                    <canvas id="aguja2"
+                    data-type="radial-gauge"
+                    data-width="400"
+                    data-height="400"
+                    data-units="Km/h"
+                    data-title="false"
+                    data-value="33.77"
+                    data-animate-on-init="true"
+                    data-animated-value="true"
+                    data-min-value="0"
+                    data-max-value="220"
+                    data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
+                    data-minor-ticks="2"
+                    data-stroke-ticks="false"
+                    data-highlights='[
+                        { "from": 0, "to": 50, "color": "LawnGreen" },
+                        { "from": 50, "to": 100, "color": "rgba(255,255,0,.15)" },
+                        { "from": 100, "to": 150, "color": "rgba(255,30,0,.25)" },
+                        { "from": 150, "to": 200, "color": "rgba(255,0,225,.25)" },
+                        { "from": 200, "to": 220, "color": "rgba(0,0,255,.25)" }
+                    ]'
+                    data-color-plate="transparent"
+                    data-color-major-ticks="#f5f5f5"
+                    data-color-minor-ticks="#ddd"
+                    data-color-title="#fff"
+                    data-color-units="#ccc"
+                    data-color-numbers="#eee"
+                    data-color-needle-start="rgba(240, 128, 128, 1)"
+                    data-color-needle-end="rgba(255, 160, 122, .9)"
+                    data-value-box="true"
+                    data-animation-rule="bounce"
+                    data-animation-duration="500"
+                    data-border-outer-width="3"
+                    data-border-middle-width="3"
+                    data-border-inner-width="3">
+                </canvas>
+                    <canvas id="aguja3"
+                    data-type="radial-gauge"
+                    data-width="400"
+                    data-height="400"
+                    data-units="Km/h"
+                    data-title="false"
+                    data-value="33.77"
+                    data-animate-on-init="true"
+                    data-animated-value="true"
+                    data-min-value="0"
+                    data-max-value="220"
+                    data-major-ticks="0,20,40,60,80,100,120,140,160,180,200,220"
+                    data-minor-ticks="2"
+                    data-stroke-ticks="false"
+                    data-highlights='[
+                        { "from": 0, "to": 50, "color": "rgba(0,255,0,.15)" },
+                        { "from": 50, "to": 100, "color": "rgba(255,255,0,.15)" },
+                        { "from": 100, "to": 150, "color": "rgba(255,30,0,.25)" },
+                        { "from": 150, "to": 200, "color": "rgba(255,0,225,.25)" },
+                        { "from": 200, "to": 220, "color": "rgba(0,0,255,.25)" }
+                    ]'
+                    data-color-plate="transparent"
+                    data-color-major-ticks="#f5f5f5"
+                    data-color-minor-ticks="#ddd"
+                    data-color-title="#fff"
+                    data-color-units="#ccc"
+                    data-color-numbers="#eee"
+                    data-color-needle-start="rgba(240, 128, 128, 1)"
+                    data-color-needle-end="rgba(255, 160, 122, .9)"
+                    data-value-box="true"
+                    data-animation-rule="bounce"
+                    data-animation-duration="500"
+                    data-border-outer-width="3"
+                    data-border-middle-width="3"
+                    data-border-inner-width="3"></canvas>
+        </div>
+    </body>
+
+<style>
+.btn
+{
+    display: inline;
+    background-color: red;
+}
+.contendor_agujas
+{
+    display: inline-flex;
+}
+</style>
+
+<script>
+
+setInterval(clic,5000);
+
+function clic()
+{
+//    console.log("el valor de x es " + x);
+//    alert("hola");
+// Creating Our XMLHttpRequest object 
+    xhr = new XMLHttpRequest();
+
+    // Making our connection  
+    xhr.open("GET", "/get_temp", true);
+
+    // function execute after request is successful 
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText);
+//            document.getElementById("tempBox").value = this.responseText;
+//            document.getElementById("aguja"). = this.responseText;
+            document.getElementById("aguja1").setAttribute("data-value",this.responseText);
+            document.getElementById("aguja2").setAttribute("data-value",this.responseText);
+            document.getElementById("aguja3").setAttribute("data-value",this.responseText);
+        }
+    }
+    // Sending our request 
+    xhr.send();
+}
+</script>
+
+</html>
